@@ -1406,3 +1406,13 @@ h6 {
   opacity: 1;
   visibility: visible;
 }
+
+/* Start - Sidebar CSS */
+
+.sidebar nav a.active {
+  background: var(--bs-body-bg);
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+/* End - Sidebar CSS */
