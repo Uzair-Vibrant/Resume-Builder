@@ -1,0 +1,146 @@
+/* Reset & body */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 60px);
+    /* Adjust for footer height */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #215c5c;
+    color: #fff;
+    /* height: 100vh; */
+    transition: width 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar .dashboard-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #215c5c;
+    background: #ffffff;
+}
+
+.sidebar .dashboard-logo img {
+    max-width: 100%;
+    height: 50px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.sidebar nav a {
+    padding: 12px 20px;
+    color: #f4f6f9;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.sidebar nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar nav a i {
+    margin-right: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebar.collapsed nav a span {
+    display: none;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header .hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Content Area */
+.content {
+    padding: 30px;
+}
+
+/* Resume Card */
+.resume-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resume-actions a,
+.resume-actions button {
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        z-index: 999;
+        left: -250px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+}
